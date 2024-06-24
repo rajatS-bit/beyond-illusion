@@ -44,6 +44,7 @@
             flex-direction: column;
             align-items: center;
             z-index: 1;
+            padding: 20px;
         }
 
         .coming-soon {
@@ -74,12 +75,13 @@
             width: 100%;
             height: 200px;
             margin-top: 40px;
+            flex-wrap: wrap;
         }
 
         .images i {
             font-size: 3rem;
             color: #555555;
-            margin: 0 40px;
+            margin: 20px;
         }
 
         .images i:nth-child(odd) {
@@ -153,6 +155,41 @@
             }
             100% {
                 background-position: 0% 50%;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .coming-soon {
+                font-size: 2rem;
+            }
+
+            .images i {
+                font-size: 2.5rem;
+                margin: 15px;
+            }
+
+            .footer {
+                font-size: 0.9rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .header {
+                font-size: 1.2rem;
+                padding: 15px;
+            }
+
+            .coming-soon {
+                font-size: 1.5rem;
+            }
+
+            .images i {
+                font-size: 2rem;
+                margin: 10px;
+            }
+
+            .footer {
+                font-size: 0.8rem;
             }
         }
     </style>
