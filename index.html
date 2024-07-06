@@ -3,210 +3,246 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Beyond Illusion Technologies</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <title>Beyond Illusion Technologies Pvt. Ltd.</title>
     <style>
-        body {
-            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-            background: linear-gradient(135deg, #e0eafc, #cfdef3);
-            background-size: 400% 400%;
-            animation: gradientAnimation 15s ease infinite;
-            color: #555555;
+        body, html {
             margin: 0;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            text-align: center;
+            padding: 0;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: #ffffff;
+            color: #333;
+            height: 100%;
             overflow: hidden;
         }
-
-        .header {
-            width: 100%;
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            position: relative;
+            z-index: 1;
+        }
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
             padding: 20px;
-            background: #555555;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+        }
+        h1 {
+            font-size: 48px;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+        .subtitle {
+            font-size: 24px;
+            margin-bottom: 30px;
+            opacity: 0.7;
+        }
+        #coming-soon {
+            font-size: 36px;
+            margin-bottom: 30px;
+            opacity: 0;
+            animation: pulse 2s infinite;
+        }
+        @keyframes pulse {
+            0% { opacity: 0; }
+            50% { opacity: 1; }
+            100% { opacity: 0; }
+        }
+        button {
+            padding: 15px 30px;
+            font-size: 18px;
+            background-color: #0070c9;
             color: white;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background-color: #005999;
+        }
+        #particles {
             position: absolute;
             top: 0;
             left: 0;
-            text-align: center;
-            font-size: 1.5rem;
-            font-weight: bold;
-            animation: fadeIn 2s ease-in-out;
-            z-index: 10;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
         }
-
-        .container {
-            animation: fadeIn 2s ease-in-out;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            z-index: 1;
+        footer {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
             padding: 20px;
+            text-align: center;
+            font-size: 14px;
+            opacity: 0.7;
         }
-
-        .coming-soon {
-            font-size: 2.5rem;
-            margin-top: 20px;
-            animation: pulse 2s infinite, ellipsis 3s infinite;
-        }
-
-        @keyframes ellipsis {
-            0% {
-                content: '...';
-            }
-            33% {
-                content: '.';
-            }
-            66% {
-                content: '..';
-            }
-            100% {
-                content: '...';
-            }
-        }
-
-        .images {
-            display: flex;
-            justify-content: center;
-            align-items: center;
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 2;
+            left: 0;
+            top: 0;
             width: 100%;
-            height: 200px;
-            margin-top: 40px;
-            flex-wrap: wrap;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0,0,0,0.4);
         }
-
-        .images i {
-            font-size: 3rem;
-            color: #555555;
-            margin: 20px;
+        .modal-content {
+            background-color: #fefefe;
+            margin: 15% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
+            max-width: 500px;
+            border-radius: 5px;
+            text-align: center;
         }
-
-        .images i:nth-child(odd) {
-            animation: float 6s ease-in-out infinite;
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
         }
-
-        .images i:nth-child(even) {
-            animation: floatReverse 6s ease-in-out infinite;
-        }
-
-        .footer {
-            position: absolute;
-            bottom: 20px;
-            width: 100%;
-            font-size: 1rem;
-            color: #777777;
-            animation: fadeIn 4s ease-in-out;
-        }
-
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-            }
-            to {
-                opacity: 1;
-            }
-        }
-
-        @keyframes pulse {
-            0% {
-                opacity: 1;
-            }
-            50% {
-                opacity: 0.5;
-            }
-            100% {
-                opacity: 1;
-            }
-        }
-
-        @keyframes float {
-            0% {
-                transform: translateY(0);
-            }
-            50% {
-                transform: translateY(-20px);
-            }
-            100% {
-                transform: translateY(0);
-            }
-        }
-
-        @keyframes floatReverse {
-            0% {
-                transform: translateY(0);
-            }
-            50% {
-                transform: translateY(20px);
-            }
-            100% {
-                transform: translateY(0);
-            }
-        }
-
-        @keyframes gradientAnimation {
-            0% {
-                background-position: 0% 50%;
-            }
-            50% {
-                background-position: 100% 50%;
-            }
-            100% {
-                background-position: 0% 50%;
-            }
-        }
-
-        @media (max-width: 768px) {
-            .coming-soon {
-                font-size: 2rem;
-            }
-
-            .images i {
-                font-size: 2.5rem;
-                margin: 15px;
-            }
-
-            .footer {
-                font-size: 0.9rem;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .header {
-                font-size: 1.2rem;
-                padding: 15px;
-            }
-
-            .coming-soon {
-                font-size: 1.5rem;
-            }
-
-            .images i {
-                font-size: 2rem;
-                margin: 10px;
-            }
-
-            .footer {
-                font-size: 0.8rem;
-            }
+        .close:hover,
+        .close:focus {
+            color: #000;
+            text-decoration: none;
+            cursor: pointer;
         }
     </style>
 </head>
 <body>
-    <div class="header">Beyond Illusion Technologies</div>
+    <header>
+        <div class="logo">BIT</div>
+    </header>
+
     <div class="container">
-        <div class="coming-soon">Coming Soon<span class="ellipsis">...</span></div>
-        <div class="images">
-            <i class="fas fa-coins"></i>
-            <i class="fas fa-chart-line"></i>
-            <i class="fas fa-wallet"></i>
-            <i class="fas fa-credit-card"></i>
+        <h1>Beyond Illusion Technologies Pvt. Ltd.</h1>
+        <p class="subtitle">Redefining Financial Innovation</p>
+        <div id="coming-soon">Coming Soon</div>
+        <button onclick="showModal()">Stay Updated</button>
+    </div>
+
+    <div id="thanksModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <h2>Thank You for Your Interest!</h2>
+            <p>For updates, please contact us at:</p>
+            <p><a href="mailto:contact@beyondillusion.tech">contact@beyondillusion.tech</a></p>
         </div>
     </div>
-    <div class="footer">
-        Contact us at: <a href="mailto:contact@beyondillusion.tech">contact@beyondillusion.tech</a>
-    </div>
+
+    <canvas id="particles"></canvas>
+
+    <footer>
+        &copy; 2024 Beyond Illusion Technologies Pvt. Ltd. All rights reserved.
+    </footer>
+
+    <script>
+        function showModal() {
+            document.getElementById('thanksModal').style.display = 'block';
+        }
+
+        function closeModal() {
+            document.getElementById('thanksModal').style.display = 'none';
+        }
+
+        window.onclick = function(event) {
+            if (event.target == document.getElementById('thanksModal')) {
+                closeModal();
+            }
+        }
+
+        const canvas = document.getElementById('particles');
+        const ctx = canvas.getContext('2d');
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+
+        const particles = [];
+        const particleCount = 100;
+
+        class Particle {
+            constructor() {
+                this.x = Math.random() * canvas.width;
+                this.y = Math.random() * canvas.height;
+                this.size = Math.random() * 3 + 1;
+                this.speedX = Math.random() * 2 - 1;
+                this.speedY = Math.random() * 2 - 1;
+            }
+
+            update() {
+                this.x += this.speedX;
+                this.y += this.speedY;
+
+                if (this.x < 0 || this.x > canvas.width) this.speedX *= -1;
+                if (this.y < 0 || this.y > canvas.height) this.speedY *= -1;
+            }
+
+            draw() {
+                ctx.fillStyle = 'rgba(0, 112, 201, 0.5)';
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+                ctx.fill();
+            }
+        }
+
+        function init() {
+            for (let i = 0; i < particleCount; i++) {
+                particles.push(new Particle());
+            }
+        }
+
+        function animate() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+            for (let particle of particles) {
+                particle.update();
+                particle.draw();
+            }
+
+            // Draw connections between nearby particles
+            for (let i = 0; i < particles.length; i++) {
+                for (let j = i + 1; j < particles.length; j++) {
+                    const dx = particles[i].x - particles[j].x;
+                    const dy = particles[i].y - particles[j].y;
+                    const distance = Math.sqrt(dx * dx + dy * dy);
+
+                    if (distance < 100) {
+                        ctx.strokeStyle = `rgba(0, 112, 201, ${0.2 - distance / 500})`;
+                        ctx.lineWidth = 1;
+                        ctx.beginPath();
+                        ctx.moveTo(particles[i].x, particles[i].y);
+                        ctx.lineTo(particles[j].x, particles[j].y);
+                        ctx.stroke();
+                    }
+                }
+            }
+
+            requestAnimationFrame(animate);
+        }
+
+        init();
+        animate();
+
+        window.addEventListener('resize', () => {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+            init();
+        });
+    </script>
 </body>
 </html>
